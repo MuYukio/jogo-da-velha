@@ -7,6 +7,7 @@ const Game = () => {
   const [xIsNext, setXIsNext] = useState(true);
 
   const winner = calculateWinner(squares);
+  const isDraw = !winner && squares.every(square => square !== '');
 
   const handleClick = (i: number) => {
     if (squares[i] || winner) return;
@@ -23,6 +24,8 @@ const Game = () => {
 
   const status = winner
     ? `Vencedor: ${winner}`
+    : isDraw
+    ? 'Empate!'
     : `Próximo jogador: ${xIsNext ? 'X' : 'O'}`;
 
   return (
@@ -37,9 +40,9 @@ const Game = () => {
 
 function calculateWinner(squares: string[]): string | null {
   const lines = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // linhas
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // colunas
-    [0, 4, 8], [2, 4, 6],            // diagonais
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6],
   ];
   for (const [a, b, c] of lines) {
     if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) {

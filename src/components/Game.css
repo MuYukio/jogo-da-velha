@@ -1,17 +1,37 @@
 .game {
-  margin-top: 20px;
+  background-color: #121212;
+  gap: 1.5rem;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .status {
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1.25rem;
+  color: #E0E0E0;
 }
 
 .restart {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+  background-color: #333333;
+  border: 2px solid #FF6F41;
+  color: #E0E0E0;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
-  display: block;
+  transition: background-color 0.2s;
+}
+.restart:hover {
+  background-color: #444444;
+}
+
+.game h1 {
+  font-size: 2.5rem;
+  color: #E0E0E0;
+  text-shadow: 0 0 5px #FF6F41;    
+  margin-bottom: 1rem;
 }

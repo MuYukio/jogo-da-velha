@@ -1,7 +1,13 @@
 .board {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 8px;
+  padding: 8px;
+  background-color: #1E1E1E;
+  border: 2px solid #2E2E2E; 
 }
 
 .board-row {
-  display: flex;
+  display: contents;
 }
